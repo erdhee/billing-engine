@@ -81,3 +81,28 @@ Complete structure can be found [here](https://dbdiagram.io/d/Billing-Engine-67e
 2. You may notice that we also have several **views** in the database to simplify the query.
 3. If you want to start over from scratch, you can simply run `supabase db reset`.
 4. The JWT Token being set in Insomnia is kinda static to match with the seed data. Please adjust accordingly when needed.
+
+## Testing Flow
+
+###### Basic Flow
+
+1. Hit **[POST]** `public/loan/' to create a loan.
+2. Hit **[PATCH]** `private/loan/${id}/approve` to approve the loan.
+3. Hit **[PATCH]** `private/loan/${id}/disburse` to disburse the loan.
+
+###### Check Outstanding
+
+1. Once loan has been disbursed, the very first billing will be on H+7. So, we need to change the billing date manually on DB so we can check the outstanding balance.
+2. Run `supabase status` and check `Studio URL` to change the data from supabase studio editor.
+3. Once the data has been updated, hit **[GET]** `private/loan/${id}/outstanding` to check the outstanding balance.
+
+###### Check Delinquent Status
+
+1. Because delinquent status is based on the outstanding, or in this case is the number of active billings that not being paid yet, so we need to adjust another record on `billings` table, so at least we have 2 active billings.
+2. Once the data has been updated, hit **[GET]** `private/loan/${id}/status` to check the delinquent status.
+
+###### Make Payment
+
+1. Because from the latest testing state, we have at least 2 billings, so we'll expect the amount to be paid by borrowers must be the sum of the billing's amount.
+2. Hit **[POST]** `private/loan/${id}/pay` to make a payment. The response will contains total amount need to be paid by the borrower and the also the expiry date.
+3. Hit **[POST]** `hook/payment/paid` to mark the invoice as paid. The default `tenure_week` is 50, so the `loans` won't be `COMPLETED` until all billings are paid.

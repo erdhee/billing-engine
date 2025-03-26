@@ -20,4 +20,4 @@ CREATE INDEX idx_loans_borrower_id ON loans (borrower_id, deleted_by);
 CREATE INDEX idx_loans_status ON loans (status, deleted_by);
 CREATE INDEX idx_loans_borrower_status ON loans (borrower_id, status, deleted_by);
 
-CREATE UNIQUE INDEX uniq_loans_active_borrower_id ON loans (borrower_id, status) WHERE deleted_by IS NULL;
+CREATE UNIQUE INDEX uniq_loans_active_borrower_id ON loans (borrower_id, status) WHERE deleted_by IS NULL AND status = 'PENDING';

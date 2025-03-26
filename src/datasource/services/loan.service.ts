@@ -37,7 +37,6 @@ export class LoanService extends BaseService implements LoanServiceInterface {
       .returns<LoanResponse[]>();
 
     if (error) {
-      console.log(error);
       throw new ApplicationError({
         status: 500,
         code: ApplicationErrors.UNKNWON_ERROR,

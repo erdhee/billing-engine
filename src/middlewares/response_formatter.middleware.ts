@@ -8,7 +8,6 @@ export const responseFormatter: MiddlewareHandler = async (c, next) => {
 
   try {
     await next();
-    console.log(c.res);
     const response = await c.res.json();
     const status = c.res.status;
     const headers = c.res.headers;
@@ -24,7 +23,6 @@ export const responseFormatter: MiddlewareHandler = async (c, next) => {
       },
     );
   } catch (error) {
-    console.log(error);
     if (error instanceof ApplicationError) {
       c.res = new Response(
         JSON.stringify({
