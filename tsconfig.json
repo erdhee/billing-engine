@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "verbatimModuleSyntax": false,
+    "skipLibCheck": true,
+    "types": ["node"],
+    "outDir": "dist",
+    "paths": {
+      "@models/*": ["./src/datasource/models/*"],
+      "@services/*": ["./src/datasource/services/*"],
+      "@repositories/*": ["./src/datasource/repositories/*"],
+      "@enums/*": ["./src/datasource/enums/*"],
+      "@utilities/*": ["./src/utilities/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@middlewares/*": ["./src/middlewares/*"]
+    }
+  }
+}

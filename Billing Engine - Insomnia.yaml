@@ -1,0 +1,330 @@
+type: collection.insomnia.rest/5.0
+name: Billing Engine
+meta:
+  id: wrk_9d3a0d27225c462cb52ba7af2e1f4b45
+  created: 1742841283306
+  modified: 1742841283306
+collection:
+  - name: Public API
+    meta:
+      id: fld_84da699f26ee43fb8503e4aedbea7131
+      created: 1742841292080
+      modified: 1742841292080
+      sortKey: -1742841292080
+    children:
+      - name: Loan
+        meta:
+          id: fld_64712445a25a4878bc209c70971685c1
+          created: 1742843692698
+          modified: 1742843692698
+          sortKey: -1742843692698
+        children:
+          - url: "{{ _.url }}/public/loan"
+            name: Request Loan
+            meta:
+              id: req_073bc887582140e48e0910e1b3da5af0
+              created: 1742843695287
+              modified: 1742936691550
+              isPrivate: false
+              sortKey: -1742843695287
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"amount": 5000000
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_d6683d446e874681867c8a323ff66e84
+              - id: pair_917558c1f06e4a9586acc5ed30545ec3
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib3Jyb3dlcklkIjoiYzc2YmI0NWUtNjNlNy00MzE1LTkxNjUtMDk0MzQ5MDBjMjVmIiwiaWF0IjoxNzQyODQyODMxfQ.KPiLoKEyYkatPOKXgMb0Fb6DOmUdXCEgEwAPzaiz8OY
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.url }}/public/loan/{% response 'body',
+              'req_073bc887582140e48e0910e1b3da5af0', 'b64::JC5kYXRhLmlk::46b',
+              'never', 60 %}"
+            name: Get Detail Loan
+            meta:
+              id: req_1a3714073d9740d088188dc684617c0d
+              created: 1742848683600
+              modified: 1742924388693
+              isPrivate: false
+              sortKey: -1742711819256
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_d6683d446e874681867c8a323ff66e84
+              - id: pair_917558c1f06e4a9586acc5ed30545ec3
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib3Jyb3dlcklkIjoiYzc2YmI0NWUtNjNlNy00MzE1LTkxNjUtMDk0MzQ5MDBjMjVmIiwiaWF0IjoxNzQyODQyODMxfQ.KPiLoKEyYkatPOKXgMb0Fb6DOmUdXCEgEwAPzaiz8OY
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.url }}/public/loan/{% response 'body',
+              'req_073bc887582140e48e0910e1b3da5af0', 'b64::JC5kYXRhLmlk::46b',
+              'never', 60 %}/outstanding"
+            name: Get Loan Outstanding
+            meta:
+              id: req_3002f8f9c38f4d2da0142297740f61eb
+              created: 1742922489441
+              modified: 1742924386628
+              isPrivate: false
+              sortKey: -1742645881240.5
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_d6683d446e874681867c8a323ff66e84
+              - id: pair_917558c1f06e4a9586acc5ed30545ec3
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib3Jyb3dlcklkIjoiYzc2YmI0NWUtNjNlNy00MzE1LTkxNjUtMDk0MzQ5MDBjMjVmIiwiaWF0IjoxNzQyODQyODMxfQ.KPiLoKEyYkatPOKXgMb0Fb6DOmUdXCEgEwAPzaiz8OY
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.url }}/public/loan/{% response 'body',
+              'req_073bc887582140e48e0910e1b3da5af0', 'b64::JC5kYXRhLmlk::46b',
+              'never', 60 %}/status"
+            name: Get Loan Status
+            meta:
+              id: req_c7b85226be9b4281bc2dcd7684b771f8
+              created: 1742924377698
+              modified: 1742924384393
+              isPrivate: false
+              sortKey: -1742612912232.75
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_d6683d446e874681867c8a323ff66e84
+              - id: pair_917558c1f06e4a9586acc5ed30545ec3
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib3Jyb3dlcklkIjoiYzc2YmI0NWUtNjNlNy00MzE1LTkxNjUtMDk0MzQ5MDBjMjVmIiwiaWF0IjoxNzQyODQyODMxfQ.KPiLoKEyYkatPOKXgMb0Fb6DOmUdXCEgEwAPzaiz8OY
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.url }}/public/loan/{% response 'body',
+              'req_073bc887582140e48e0910e1b3da5af0', 'b64::JC5kYXRhLmlk::46b',
+              'never', 60 %}/pay"
+            name: Create Payment
+            meta:
+              id: req_2dee1764427d48829ac6b908ff82b45f
+              created: 1742927493237
+              modified: 1742934696049
+              isPrivate: false
+              sortKey: -1742596427728.875
+            method: POST
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_d6683d446e874681867c8a323ff66e84
+              - id: pair_917558c1f06e4a9586acc5ed30545ec3
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib3Jyb3dlcklkIjoiYzc2YmI0NWUtNjNlNy00MzE1LTkxNjUtMDk0MzQ5MDBjMjVmIiwiaWF0IjoxNzQyODQyODMxfQ.KPiLoKEyYkatPOKXgMb0Fb6DOmUdXCEgEwAPzaiz8OY
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.url }}/public/loan"
+            name: Get All Loan
+            meta:
+              id: req_3b48fc9c4fa448c8af99bc6fe613f716
+              created: 1742997327262
+              modified: 1742998386424
+              isPrivate: false
+              sortKey: -1742777757271.5
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_d6683d446e874681867c8a323ff66e84
+              - id: pair_917558c1f06e4a9586acc5ed30545ec3
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib3Jyb3dlcklkIjoiYzc2YmI0NWUtNjNlNy00MzE1LTkxNjUtMDk0MzQ5MDBjMjVmIiwiaWF0IjoxNzQyODQyODMxfQ.KPiLoKEyYkatPOKXgMb0Fb6DOmUdXCEgEwAPzaiz8OY
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+  - name: Private API
+    meta:
+      id: fld_92d0b184322e4d178e31dc13a1d3ff4c
+      created: 1742849542883
+      modified: 1742849542883
+      sortKey: -1742849542883
+    children:
+      - name: Loan
+        meta:
+          id: fld_e41fab47116b49428656a94370c7be90
+          created: 1742849548935
+          modified: 1742849558125
+          sortKey: -1742849558048
+        children:
+          - url: "{{ _.url }}/private/loan/{% response 'body',
+              'req_073bc887582140e48e0910e1b3da5af0', 'b64::JC5kYXRhLmlk::46b',
+              'never', 60 %}/approve"
+            name: Approve Loan
+            meta:
+              id: req_a05750b7526c439baf017971c63067cd
+              created: 1742849563939
+              modified: 1742849670544
+              isPrivate: false
+              sortKey: -1742849563939
+            method: PATCH
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.url }}/private/loan/{% response 'body',
+              'req_073bc887582140e48e0910e1b3da5af0', 'b64::JC5kYXRhLmlk::46b',
+              'never', 60 %}/disburse"
+            name: Disburse Loan
+            meta:
+              id: req_a8817c1e42644a7e9901e2c6386a0287
+              created: 1742850588880
+              modified: 1742850591637
+              isPrivate: false
+              sortKey: -1742846629613
+            method: PATCH
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+  - name: Hook
+    meta:
+      id: fld_e06ee7cbab114b8ead4f492762f7869a
+      created: 1742934636743
+      modified: 1742934636743
+      sortKey: -1742934636743
+    children:
+      - name: Payment
+        meta:
+          id: fld_ab642da62a6640c4a9fdcb84288f22d5
+          created: 1742934657741
+          modified: 1742934657741
+          sortKey: -1742934657741
+        children:
+          - url: "{{ _.url }}/hook/payment/paid"
+            name: Mark as Paid
+            meta:
+              id: req_a4d76e481fd74c22ab8b318ab6b0f263
+              created: 1742934686076
+              modified: 1742934828995
+              isPrivate: false
+              sortKey: -1742934661076
+            method: POST
+            body:
+              mimeType: application/json
+              text: >-
+                {
+                	"invoiceId": "{% response 'body', 'req_2dee1764427d48829ac6b908ff82b45f', 'b64::JC5kYXRhLmlk::46b', 'never', 60 %}",
+                	"refId": "PAY1234567890",
+                	"amount": {% response 'body', 'req_2dee1764427d48829ac6b908ff82b45f', 'b64::JC5kYXRhLmFtb3VudA==::46b', 'never', 60 %}
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_f037c37e58a5f07c49df776a48f17f81bc557378
+    created: 1742841283322
+    modified: 1742841283322
+environments:
+  name: Base Environment
+  meta:
+    id: env_f037c37e58a5f07c49df776a48f17f81bc557378
+    created: 1742841283319
+    modified: 1742843724346
+    isPrivate: false
+  data:
+    url: localhost:3000

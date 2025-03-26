@@ -1,0 +1,7 @@
+export enum LoanStatus {
+  PENDING = "PENDING",
+  APPROVED = "APPROVED",
+  DISBURSED = "DISBURSED",
+  CLOSED = "CLOSED",
+  COMPLETED = "COMPLETED",
+}
