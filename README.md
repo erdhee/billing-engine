@@ -67,7 +67,11 @@ Because we don't need to put extra effort to setup data layer. Supabase is using
 3. Run `supabase start` to start Supabase locally. It will run the initial migrations and seed the database.
 4. Copy `.env.sample` to `.env` and change the value of `SUPABASE_URL` and `SUPABASE_ANON_KEY` match with the configuration on your local machine. Please check via `supabase status` command and copy `API Url` and `anon key` from the output.
 5. Run `npm run dev` to start the project.
-6. You'll find `Billing Enginen - Insomnia.yaml` in the root directory. Import it to Insomnia and start testing.
+6. You'll find `Billing Engine - Insomnia.yaml` in the root directory. Import it to Insomnia and start testing.
+
+```
+If supabase unable to start, it's likely due to the port conflict. Please change the port in `supabase/config.toml` to avoid conflict or stop the existing service that use the same port temporarily.
+```
 
 ## Database Design
 
